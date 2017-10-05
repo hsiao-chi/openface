@@ -87,8 +87,11 @@ def getRep(imgPath):
         raise Exception("Unable to align image: {}".format(imgPath))
     if args.verbose:
         print("  + Face alignment took {} seconds.".format(time.time() - start))
+       
     print("============= {} ==========".format(imgPath))
     print(alignedFace)
+    print("========== findLandmarks=======")
+    print(align.findLandmarks(rgbImg,bb))
     
     start = time.time()
     rep = net.forward(alignedFace)
