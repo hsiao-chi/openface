@@ -92,6 +92,8 @@ def getRep(imgPath):
     
     start = time.time()
     rep = net.forward(alignedFace)
+    print("=========rep=======")
+    print(rep)
     if args.verbose:
         print("  + OpenFace forward pass took {} seconds.".format(time.time() - start))
         print("Representation:")
@@ -104,6 +106,7 @@ for (img1, img2) in itertools.combinations(args.imgs, 2):
     print("Comparing {} with {}.".format(img1, img2))
     print(
         "  + Squared l2 distance between representations: {:0.3f}".format(np.dot(d, d)))
+    break
     #print("+++++++++++++++++++++++++")
     #print(getRep(img1))
     #print("=================================")
