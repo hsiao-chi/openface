@@ -94,7 +94,7 @@ def getRep(imgPath):
     print(align.findLandmarks(rgbImg,bb))
     print("========== findLandmarks after align=======")
     bb1=align.getLargestFaceBoundingBox(alignedFace)
-    print(align.findLandmarks(alignedFace))
+    print(align.findLandmarks(alignedFace,bb1))
     
     start = time.time()
     rep = net.forward(alignedFace)
